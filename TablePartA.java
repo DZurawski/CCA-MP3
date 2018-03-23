@@ -17,10 +17,9 @@ public class TablePartA {
 
         // Instantiating configuration class
         Configuration con = HBaseConfiguration.create();
-con.set(hbase master, "");
-    con.set(zookeeper quorum, "");
-    con.set(znode parent, ""); 
-        
+        con.clear();
+        con.set("hbase.zookeeper.quorum", "192.168.15.20");
+        con.set("hbase.zookeeper.property.clientPort", "2181");
         
         // Instantiating HbaseAdmin class
         HBaseAdmin admin = new HBaseAdmin(con);
