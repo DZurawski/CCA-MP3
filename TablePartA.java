@@ -14,12 +14,14 @@ import org.apache.hadoop.hbase.util.Bytes;
 
 public class TablePartA {
     public static void main(String[] args) throws IOException {        
-        HTableDescriptor powers = new HTableDescriptor("powers"); 
+        HTableDescriptor powers
+            = new HTableDescriptor(TableName.valueOf("powers")); 
         powers.addFamily(new HColumnDescriptor("personal"));
         powers.addFamily(new HColumnDescriptor("professional"));
         powers.addFamily(new HColumnDescriptor("custom"));
 
-        HTableDescriptor food = new HTableDescriptor("food"); 
+        HTableDescriptor food
+            = new HTableDescriptor(TableName.valueOf("food")); 
         food.addFamily(new HColumnDescriptor("nutrition"));
         food.addFamily(new HColumnDescriptor("taste"));
         
