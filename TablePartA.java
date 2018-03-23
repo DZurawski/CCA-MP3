@@ -26,6 +26,8 @@ public class TablePartA {
         food.addFamily(new HColumnDescriptor("taste"));
         
         HBaseConfiguration conf = new HBaseConfiguration(new Configuration());
+        conf.clear();
+        conf.set("hbase.zookeeper.quorum", "172.17.0.5");
         HBaseAdmin admin = new HBaseAdmin(conf);
         admin.createTable(powers);
         admin.createTable(food);
