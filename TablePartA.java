@@ -17,7 +17,11 @@ public class TablePartA {
 
         // Instantiating configuration class
         Configuration con = HBaseConfiguration.create();
-
+con.set(hbase master, "");
+    con.set(zookeeper quorum, "");
+    con.set(znode parent, ""); 
+        
+        
         // Instantiating HbaseAdmin class
         HBaseAdmin admin = new HBaseAdmin(con);
 
