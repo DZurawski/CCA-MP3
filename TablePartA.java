@@ -18,14 +18,14 @@ public class TablePartA {
         HBaseAdmin admin = new HBaseAdmin(con);
 
         HTableDescriptor powers
-            = new HTableDescriptor(TableName.valueOf("powers"));
+            = new HTableDescriptor(TableName.valueOf("emp"));
         powers.addFamily(new HColumnDescriptor("personal"));
         powers.addFamily(new HColumnDescriptor("professional"));
         powers.addFamily(new HColumnDescriptor("custom"));
         admin.createTable(powers);
         
         HTableDescriptor food
-            = new HTableDescriptor(TableName.valueOf("food"));
+            = new HTableDescriptor(TableName.valueOf("emp"));
         food.addFamily(new HColumnDescriptor("nutrition"));
         food.addFamily(new HColumnDescriptor("taste"));
         admin.createTable(food);
