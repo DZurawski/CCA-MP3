@@ -3,7 +3,7 @@ import csv
 
 connection = hb.Connection("localhost", 9090)
 
-powers = connection.table(b"powers")
+powers = connection.table("powers")
 
 with open("input.csv") as file:
     for row in csv.reader(file):
