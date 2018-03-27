@@ -1,5 +1,5 @@
 import happybase as hb
 
-connection = hb.Connection("host")
+connection = hb.Connection("localhost")
 
 print(connection.tables())
