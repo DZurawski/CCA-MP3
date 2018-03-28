@@ -1,6 +1,6 @@
 import happybase as hb
 
-connection = hb.Connection("localhost", 9090)
+connection = hb.Connection()
 
 columns = {"personal" : dict(), "professional": dict(), "custom": dict()}
 powers  = connection.create_table("powers", columns)

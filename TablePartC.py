@@ -1,10 +1,9 @@
 import happybase as hb
 import csv
 
-connection = hb.Connection("localhost", 9090)
+connection = hb.Connection()
 
 powers = connection.table("powers")
-
 with open("input.csv") as file:
     for row in csv.reader(file):
         data = {
@@ -13,6 +12,5 @@ with open("input.csv") as file:
             "custom:color"      : row[5]
         }
         powers.put(row[0], data)
-        break
         
 connection.close()

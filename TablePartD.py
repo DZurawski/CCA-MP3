@@ -1,6 +1,6 @@
 import happybase as hb
 
-connection = hb.Connection("localhost", 9090)
+connection = hb.Connection()
 
 powers = connection.table("powers")
 
@@ -15,7 +15,7 @@ print("hero: {0}, color: {1}".format(
     row19[b"personal:hero"], row19[b"custom:color"]
 ))
 print("hero: {0}, name: {1}, color: {2}".format(
-    row1["personal:hero"], row1["personal:name"], row1["custom:color"]
+    row1[b"personal:hero"], row1[b"professional:name"], row1[b"custom:color"]
 ))
 
 connection.close()
